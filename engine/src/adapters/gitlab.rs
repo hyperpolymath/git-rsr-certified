@@ -33,7 +33,7 @@ impl PlatformAdapter for GitLabAdapter {
         "gitlab"
     }
 
-    fn verify_webhook(&self, payload: &[u8], headers: &Headers) -> Result<bool> {
+    fn verify_webhook(&self, _payload: &[u8], headers: &Headers) -> Result<bool> {
         let Some(ref secret) = self.config.webhook_secret else {
             tracing::warn!("Webhook secret not configured - skipping verification");
             return Ok(true);
@@ -47,7 +47,7 @@ impl PlatformAdapter for GitLabAdapter {
         Ok(token == secret)
     }
 
-    fn parse_webhook(&self, payload: &[u8], headers: &Headers) -> Result<RepoEvent> {
+    fn parse_webhook(&self, _payload: &[u8], headers: &Headers) -> Result<RepoEvent> {
         let event_type = headers
             .get("x-gitlab-event")
             .ok_or_else(|| RsrError::Platform("Missing X-Gitlab-Event header".to_string()))?;
