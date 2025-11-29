@@ -27,7 +27,7 @@ updates:
   - package-ecosystem: "docker"
     directory: "/container"
     schedule:
-      interval: "weekly"
+      interval: "daily"
     labels:
       - "dependencies"
       - "container"
