@@ -1,0 +1,61 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Secrets (NEVER commit these)
+*.pem
+*.key
+credentials.json
+secrets.json
+*.secret
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test coverage
+coverage/
+*.lcov
+tarpaulin-report.html
+
+# Documentation build
+/docs/_build/
+/site/
+
+# Container
+.container-*
+
+# Node (for VS Code extension)
+node_modules/
+*.log
+npm-debug.log*
+
+# Python (if any scripts)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
