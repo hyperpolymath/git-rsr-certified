@@ -8,11 +8,6 @@ mod silver;
 use crate::{CertificationTier, CheckResult, ComplianceStatus, RepoRef, Result};
 use std::path::Path;
 
-pub use bronze::BronzeChecks;
-pub use gold::GoldChecks;
-pub use rhodium::RhodiumChecks;
-pub use silver::SilverChecks;
-
 /// Compliance check trait - implemented by each tier's check module
 #[async_trait::async_trait]
 pub trait ComplianceCheck: Send + Sync {

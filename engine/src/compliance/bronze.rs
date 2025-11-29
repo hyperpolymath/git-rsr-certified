@@ -377,9 +377,9 @@ fn is_gitignored(repo_path: &Path, file: &str) -> bool {
 
 fn detect_secret_patterns(content: &str) -> Option<String> {
     let patterns = [
-        (r"(?i)api[_-]?key\s*[:=]\s*['\"][a-zA-Z0-9]{20,}['\"]", "Possible API key"),
-        (r"(?i)secret[_-]?key\s*[:=]\s*['\"][a-zA-Z0-9]{20,}['\"]", "Possible secret key"),
-        (r"(?i)password\s*[:=]\s*['\"][^'\"]{8,}['\"]", "Possible hardcoded password"),
+        (r#"(?i)api[_-]?key\s*[:=]\s*["'][a-zA-Z0-9]{20,}["']"#, "Possible API key"),
+        (r#"(?i)secret[_-]?key\s*[:=]\s*["'][a-zA-Z0-9]{20,}["']"#, "Possible secret key"),
+        (r#"(?i)password\s*[:=]\s*["'][^"']{8,}["']"#, "Possible hardcoded password"),
         (r"AKIA[0-9A-Z]{16}", "AWS Access Key ID"),
         (r"(?i)bearer\s+[a-zA-Z0-9\-_.]{20,}", "Possible Bearer token"),
         (r"-----BEGIN (RSA |EC |DSA )?PRIVATE KEY-----", "Private key"),

@@ -6,7 +6,7 @@ use axum::{
     response::{IntoResponse, Response},
     Json,
 };
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 
 /// Health check endpoint
 pub async fn health() -> impl IntoResponse {
@@ -95,31 +95,7 @@ pub async fn get_badge(
 
     // TODO: Look up actual tier from database
     let tier = crate::CertificationTier::Silver;
-    let color = tier.color();
-    let label = tier.code();
-
-    let svg = format!(
-        r#"<svg xmlns="http://www.w3.org/2000/svg" width="120" height="20">
-  <linearGradient id="b" x2="0" y2="100%">
-    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
-    <stop offset="1" stop-opacity=".1"/>
-  </linearGradient>
-  <clipPath id="a">
-    <rect width="120" height="20" rx="3" fill="#fff"/>
-  </clipPath>
-  <g clip-path="url(#a)">
-    <path fill="#555" d="M0 0h45v20H0z"/>
-    <path fill="{color}" d="M45 0h75v20H45z"/>
-    <path fill="url(#b)" d="M0 0h120v20H0z"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
-    <text x="22.5" y="15" fill="#010101" fill-opacity=".3">RSR</text>
-    <text x="22.5" y="14">RSR</text>
-    <text x="82.5" y="15" fill="#010101" fill-opacity=".3">{label}</text>
-    <text x="82.5" y="14">{label}</text>
-  </g>
-</svg>"#
-    );
+    let svg = generate_badge_svg(&tier);
 
     (
         StatusCode::OK,
@@ -130,6 +106,35 @@ pub async fn get_badge(
         svg,
     )
         .into_response()
+}
+
+fn generate_badge_svg(tier: &crate::CertificationTier) -> String {
+    let color = tier.color();
+    let label = tier.code();
+
+    format!(
+        r##"<svg xmlns="http://www.w3.org/2000/svg" width="120" height="20">
+<linearGradient id="b" x2="0" y2="100%">
+<stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+<stop offset="1" stop-opacity=".1"/>
+</linearGradient>
+<clipPath id="a">
+<rect width="120" height="20" rx="3" fill="#fff"/>
+</clipPath>
+<g clip-path="url(#a)">
+<path fill="#555" d="M0 0h45v20H0z"/>
+<path fill="{}" d="M45 0h75v20H45z"/>
+<path fill="url(#b)" d="M0 0h120v20H0z"/>
+</g>
+<g fill="#fff" text-anchor="middle" font-family="Verdana,sans-serif" font-size="11">
+<text x="22.5" y="15" fill="#010101" fill-opacity=".3">RSR</text>
+<text x="22.5" y="14">RSR</text>
+<text x="82.5" y="15" fill="#010101" fill-opacity=".3">{}</text>
+<text x="82.5" y="14">{}</text>
+</g>
+</svg>"##,
+        color, label, label
+    )
 }
 
 /// Get detailed compliance report
