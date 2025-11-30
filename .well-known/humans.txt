@@ -1,0 +1,18 @@
+/* TEAM */
+Project: RSR-Certified
+Role: Universal Rhodium Standard Repository Compliance Engine
+Site: https://rsr-certified.dev
+Location: Distributed
+
+/* THANKS */
+The Rhodium Standard Repositories community
+Campaign for Cooler Coding and Programming (CCCP)
+IndieWeb community
+Rust community
+
+/* SITE */
+Last update: 2024-01-01
+Language: English
+Standards: RSR Gold, CCCP Compliant
+Doctype: Rust, TypeScript
+Tools: Rust, Podman, SurrealDB, ArangoDB, DragonflyDB

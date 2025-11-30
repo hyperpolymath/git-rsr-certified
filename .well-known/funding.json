@@ -1,0 +1,40 @@
+{
+  "$schema": "https://fundingschema.org/schema.json",
+  "version": "1.0.0",
+  "entity": {
+    "type": "project",
+    "name": "RSR-Certified",
+    "description": "Universal Rhodium Standard Repository compliance engine",
+    "url": "https://github.com/Hyperpolymath/git-rsr-certified"
+  },
+  "funding": {
+    "channels": [
+      {
+        "type": "opencollective",
+        "url": "https://opencollective.com/rsr-certified"
+      },
+      {
+        "type": "github",
+        "url": "https://github.com/sponsors/Hyperpolymath"
+      },
+      {
+        "type": "custom",
+        "url": "https://rsr-certified.dev/donate"
+      }
+    ],
+    "plans": [
+      {
+        "name": "Individual Supporter",
+        "amount": 5,
+        "currency": "USD",
+        "frequency": "monthly"
+      },
+      {
+        "name": "Organization Sponsor",
+        "amount": 100,
+        "currency": "USD",
+        "frequency": "monthly"
+      }
+    ]
+  }
+}

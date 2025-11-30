@@ -5,6 +5,7 @@
 
 pub mod adapters;
 pub mod compliance;
+pub mod db;
 pub mod events;
 pub mod server;
 
