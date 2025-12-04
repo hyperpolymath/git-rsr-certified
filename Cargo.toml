@@ -54,7 +54,7 @@ clap = { version = "4.4", features = ["derive", "env"] }
 
 # Testing
 mockall = "0.12"
-wiremock = "0.5"
+wiremock = "0.6"
 
 # LSP
 tower-lsp = "0.20"
