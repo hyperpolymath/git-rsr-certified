@@ -1,9 +1,10 @@
 ---
 name: Feature Request
 about: Suggest a feature for RSR-Certified
-title: '[FEATURE] '
+title: "[FEATURE] "
 labels: enhancement
 assignees: ''
+
 ---
 
 ## Summary

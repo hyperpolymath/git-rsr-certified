@@ -1,9 +1,10 @@
 ---
 name: Bug Report
 about: Report a bug in RSR-Certified
-title: '[BUG] '
+title: "[BUG] "
 labels: bug
 assignees: ''
+
 ---
 
 ## Description
