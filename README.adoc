@@ -1,143 +1,76 @@
-= RSR-Certified
+= git-rsr-certified
+Jonathan D.A. Jewell <jonathan.jewell@gmail.com>
+:toc: macro
+:icons: font
+:source-highlighter: rouge
+:experimental:
+:url-github: https://github.com/hyperpolymath/git-rsr-certified
+:url-gitlab: https://gitlab.com/hyperpolymath/git-rsr-certified
+:url-bitbucket: https://bitbucket.org/hyperpolymath/git-rsr-certified
+:url-codeberg: https://codeberg.org/hyperpolymath/git-rsr-certified
 
-*Universal Rhodium Standard Repository Compliance Engine*
+RSR certification badge and compliance checker
 
-[![RSR Certification](badges/silver.svg)](https://rsr-certified.dev)
-[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE)
+image:https://img.shields.io/badge/RSR-Certified-gold[RSR Certified]
+image:https://img.shields.io/badge/License-AGPL%20v3-blue[License]
 
-One compliance engine. Every git platform. Universal repository excellence.
+toc::[]
 
-== What is RSR?
+== Overview
 
-RSR (Rhodium Standard Repository) is a tiered certification framework for software repositories. It defines clear, measurable standards for repository quality across:
+git-rsr-certified is part of the link:https://rhodium.sh[Rhodium Standard] (RSR) ecosystem.
 
-- *Bronze* - Foundation: LICENSE, README, .gitignore, no secrets
-- *Silver* - Established: CONTRIBUTING, SECURITY policy, CI/CD, changelog
-- *Gold* - Excellence: Documentation, test coverage, dependency scanning
-- *Rhodium* - Exemplary: SBOM, reproducible builds, SLSA compliance
-
-== Features
-
-- *Universal Platform Support* - GitHub, GitLab, Bitbucket, Gitea/Forgejo
-- *Containerized Deployment* - Run anywhere with Podman or Docker
-- *IDE Integration* - LSP server for VS Code, Neovim, and more
-- *CLI Tool* - Check compliance locally before pushing
-- *Webhook Server* - Automatic checks on push/PR events
-- *Badge Generation* - Show your certification proudly
-
-== Quick Start
-
-=== Check Local Repository
-
-```bash
-= Install the CLI
-cargo install rsr-engine
-
-= Check compliance
-rsr check .
-
-= Initialize configuration
-rsr init --tier silver
-```
-
-=== Run with Docker/Podman
-
-```bash
-= Pull and run
-podman run -p 8080:8080 ghcr.io/hyperpolymath/rsr-certified:latest
-
-= Or use compose
-cd container && podman-compose up -d
-```
-
-=== Check a Remote Repository
-
-```bash
-= Via API
-curl https://rsr-certified.dev/api/v1/repo/owner/repo/status
-```
-
-== Configuration
-
-Create `.rsr.toml` in your repository root:
-
-```toml
-[compliance]
-target_tier = "gold"
-strict_mode = false
-
-[checks]
-license.required = true
-license.allowed = ["MIT", "Apache-2.0"]
-readme.min_length = 100
-
-[ignore]
-paths = ["vendor/", "node_modules/"]
-```
-
-== Certification Tiers
-
-| Tier | Symbol | Requirements |
-|------|--------|--------------|
-| *Rhodium* | ◆ RSR-Rh | Full compliance + SBOM + SLSA + threat model |
-| *Gold* | ★ RSR-Au | Full compliance + docs + coverage + security scanning |
-| *Silver* | ☆ RSR-Ag | Core compliance + CONTRIBUTING + CI/CD + SECURITY |
-| *Bronze* | ● RSR-Cu | LICENSE + README + .gitignore + no secrets |
-
-== Architecture
-
-```
-┌─────────────────────────────────────────────────┐
-│              RSR-CERTIFIED ENGINE               │
-├─────────────────────────────────────────────────┤
-│  GitHub │ GitLab │ Bitbucket │ Gitea/Forgejo   │
-│    ↓        ↓         ↓           ↓            │
-│        Universal Event Translator               │
-│                    ↓                            │
-│            Compliance Engine                    │
-│         ↙        ↓         ↘                   │
-│    Badges    Reports    IDE/LSP                │
-└─────────────────────────────────────────────────┘
-```
+Domain: *software-development*
 
 == Installation
 
-=== From Source
+[source,bash]
+----
+# Clone from GitHub (primary)
+git clone {url-github}
 
-```bash
-git clone https://github.com/Hyperpolymath/git-rsr-certified
-cd git-rsr-certified
-cargo build --release
-```
+# Or from mirrors
+git clone {url-gitlab}
+git clone {url-codeberg}
+----
 
-=== From Cargo
+== RSR Stack
 
-```bash
-cargo install rsr-engine
-```
+This project follows RSR conventions:
 
-=== As GitHub App
+* ✅ ReScript for frontend/logic
+* ✅ Deno for JS runtime
+* ✅ WASM for performance-critical code
+* ✅ Rust/OCaml/Haskell for systems/proofs
+* ✅ Guile/Scheme for configuration
+* ❌ No TypeScript
+* ❌ No Go
+* ❌ No npm
 
-Visit [github.com/apps/rsr-certified](https://github.com/apps/rsr-certified) to install.
+== Mirrors
 
-== IDE Extensions
+[cols="1,2"]
+|===
+| Platform | URL
 
-- *VS Code*: Search "RSR Certified" in extensions
-- *Neovim*: Use any LSP client with `rsr-lsp`
-- *Emacs*: Configure `lsp-mode` or `eglot` with `rsr-lsp`
-
-== Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-== Security
-
-See [SECURITY.md](SECURITY.md) for our security policy.
+| GitHub (primary) | {url-github}
+| GitLab | {url-gitlab}
+| Bitbucket | {url-bitbucket}
+| Codeberg | {url-codeberg}
+|===
 
 == License
 
-Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE) at your option.
+Licensed under AGPL-3.0-or-later OR LicenseRef-Palimpsest-0.5.
 
----
+See link:LICENSE[LICENSE] for details.
 
-*RSR-Certified* - Raising the bar for repository excellence, everywhere.
+== Contributing
+
+See link:CONTRIBUTING.adoc[CONTRIBUTING.adoc].
+
+== Metadata
+
+* Domain: software-development
+* Framework: RSR (Rhodium Standard Repository)
+* Dublin Core: link:.well-known/dc.xml[.well-known/dc.xml]
