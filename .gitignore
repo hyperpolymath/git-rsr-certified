@@ -1,61 +1,79 @@
-# Rust
-/target/
-**/*.rs.bk
-Cargo.lock
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# RSR-compliant .gitignore
 
-# IDE
-.idea/
-.vscode/
+# OS & Editor
+.DS_Store
+Thumbs.db
 *.swp
 *.swo
 *~
+.idea/
+.vscode/
 
-# OS
-.DS_Store
-Thumbs.db
+# Build
+/target/
+/_build/
+/build/
+/dist/
+/out/
 
-# Environment
-.env
-.env.local
-.env.*.local
+# Dependencies
+/node_modules/
+/vendor/
+/deps/
+/.elixir_ls/
 
-# Secrets (NEVER commit these)
-*.pem
-*.key
-credentials.json
-secrets.json
-*.secret
+# Rust
+# Cargo.lock  # Keep for binaries
 
-# Build artifacts
-*.exe
-*.dll
-*.so
-*.dylib
+# Elixir
+/cover/
+/doc/
+*.ez
+erl_crash.dump
 
-# Test coverage
-coverage/
-*.lcov
-tarpaulin-report.html
+# Julia
+*.jl.cov
+*.jl.mem
+/Manifest.toml
 
-# Documentation build
-/docs/_build/
-/site/
+# ReScript
+/lib/bs/
+/.bsb.lock
 
-# Container
-.container-*
-
-# Node (for VS Code extension)
-node_modules/
-*.log
-npm-debug.log*
-
-# Python (if any scripts)
+# Python (SaltStack only)
 __pycache__/
 *.py[cod]
 .venv/
-venv/
 
-# Temporary files
+# Ada/SPARK
+*.ali
+/obj/
+/bin/
+
+# Haskell
+/.stack-work/
+/dist-newstyle/
+
+# Chapel
+*.chpl.tmp.*
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# Test/Coverage
+/coverage/
+htmlcov/
+
+# Logs
+*.log
+/logs/
+
+# Temp
+/tmp/
 *.tmp
-*.temp
-.cache/
+*.bak
