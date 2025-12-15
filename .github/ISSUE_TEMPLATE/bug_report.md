@@ -1,37 +1,38 @@
 ---
-name: Bug Report
-about: Report a bug in RSR-Certified
-title: "[BUG] "
-labels: bug
+name: Bug report
+about: Create a report to help us improve
+title: "[Bug]: "
+labels: 'bug, priority: unset, triage'
 assignees: ''
 
 ---
 
-## Description
-A clear and concise description of the bug.
+**Describe the bug**
+A clear and concise description of what the bug is.
 
-## Steps to Reproduce
+**To Reproduce**
+Steps to reproduce the behavior:
 1. Go to '...'
-2. Click on '...'
-3. Run command '...'
+2. Click on '....'
+3. Scroll down to '....'
 4. See error
 
-## Expected Behavior
-What you expected to happen.
+**Expected behavior**
+A clear and concise description of what you expected to happen.
 
-## Actual Behavior
-What actually happened.
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
-## Environment
-- **RSR Version**: [e.g., 0.1.0]
-- **OS**: [e.g., Ubuntu 22.04, macOS 14]
-- **Platform**: [e.g., GitHub, GitLab, Bitbucket]
-- **Deployment**: [e.g., CLI, Container, GitHub App]
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
 
-## Logs
-```
-Paste relevant logs here
-```
+**Smartphone (please complete the following information):**
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
 
-## Additional Context
-Any other context about the problem.
+**Additional context**
+Add any other context about the problem here.
