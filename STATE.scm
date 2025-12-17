@@ -15,7 +15,7 @@
   '((version . "0.1.0")
     (schema-version . "1.0")
     (created . "2025-12-15")
-    (updated . "2025-12-15")
+    (updated . "2025-12-17")
     (project . "git-rsr-certified")
     (repo . "github.com/hyperpolymath/git-rsr-certified")))
 
@@ -113,13 +113,21 @@
      ())  ;; No critical blockers
 
     (high-priority
-     ())  ;; No high-priority blockers
+     ((typescript-conversion
+       ((description . "VS Code extension still uses TypeScript")
+        (location . "extensions/vscode/")
+        (impact . "Policy violation - RSR requires ReScript")
+        (needed . "Convert extension.ts to extension.res")))))
 
     (medium-priority
      ((test-coverage
        ((description . "Limited test infrastructure")
         (impact . "Risk of regressions")
-        (needed . "Comprehensive test suites")))))
+        (needed . "Comprehensive test suites")))
+      (guix-nix-testing
+       ((description . "SCM package definitions need validation")
+        (impact . "Reproducible builds may fail")
+        (needed . "CI jobs for Guix/Nix builds")))))
 
     (low-priority
      ((documentation-gaps
@@ -151,6 +159,15 @@
 
 (define session-history
   '((snapshots
+     ((date . "2025-12-17")
+      (session . "scm-security-review")
+      (accomplishments
+       ("Fixed critical HTTP/HTTPS check bug in security-policy.yml"
+        "Added legacy TypeScript exception for extensions/vscode"
+        "Improved guix.scm synopsis and description"
+        "Generated Cargo.lock for reproducible Nix builds"
+        "Updated blockers with TypeScript conversion priority"))
+      (notes . "Security review and SCM validation session"))
      ((date . "2025-12-15")
       (session . "initial-state-creation")
       (accomplishments
@@ -188,7 +205,7 @@
     (overall-completion . 25)
     (next-milestone . "v0.2 - Core Functionality")
     (critical-blockers . 0)
-    (high-priority-issues . 0)
-    (updated . "2025-12-15")))
+    (high-priority-issues . 1)  ;; TypeScript conversion
+    (updated . "2025-12-17")))
 
 ;;; End of STATE.scm

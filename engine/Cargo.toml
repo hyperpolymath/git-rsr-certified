@@ -42,6 +42,18 @@ async-trait = "0.1"
 chrono = { version = "0.4", features = ["serde"] }
 urlencoding = "2.1"
 
+# Database backends
+redis = { version = "0.27", features = ["tokio-comp", "aio"], optional = true }
+surrealdb = { version = "2.1", optional = true }
+arangors = { version = "0.6", optional = true }
+
+[features]
+default = []
+cache = ["redis"]
+documents = ["surrealdb"]
+graphs = ["arangors"]
+all-dbs = ["cache", "documents", "graphs"]
+
 [dev-dependencies]
 mockall.workspace = true
 wiremock.workspace = true

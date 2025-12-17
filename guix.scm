@@ -16,8 +16,12 @@
                         #:recursive? #t
                         #:select? (git-predicate ".")))
     (build-system cargo-build-system)
-    (synopsis "Rust application")
-    (description "Rust application - part of the RSR ecosystem.")
+    (synopsis "Universal Rhodium Standard Repository Compliance Engine")
+    (description "RSR-Certified is a compliance checking engine that verifies git
+repositories against the Rhodium Standard Repository (RSR) framework.  It supports
+multiple platforms (GitHub, GitLab, Bitbucket, Gitea/Forgejo) and checks compliance
+across Bronze, Silver, Gold, and Rhodium tiers.  Features include webhook-based
+real-time monitoring, badge generation, and an LSP server for editor integration.")
     (home-page "https://github.com/hyperpolymath/git-rsr-certified")
     (license license:agpl3+)))
 
