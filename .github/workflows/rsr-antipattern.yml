@@ -20,12 +20,14 @@ jobs:
 
       - name: Check for TypeScript
         run: |
-          if find . -name "*.ts" -o -name "*.tsx" | grep -v node_modules | grep -q .; then
+          # Allow legacy extensions/vscode until ReScript conversion (tracked in TS_CONVERSION_NEEDED.md)
+          TS_FILES=$(find . -name "*.ts" -o -name "*.tsx" | grep -v node_modules | grep -v 'extensions/vscode' || true)
+          if [ -n "$TS_FILES" ]; then
             echo "❌ TypeScript files detected - use ReScript instead"
-            find . -name "*.ts" -o -name "*.tsx" | grep -v node_modules
+            echo "$TS_FILES"
             exit 1
           fi
-          echo "✅ No TypeScript files"
+          echo "✅ No TypeScript files (except legacy extensions/vscode pending conversion)"
 
       - name: Check for Go
         run: |
@@ -56,11 +58,14 @@ jobs:
 
       - name: Check for tsconfig
         run: |
-          if [ -f "tsconfig.json" ]; then
+          # Allow legacy extensions/vscode until ReScript conversion
+          TSCONFIGS=$(find . -name "tsconfig.json" | grep -v 'extensions/vscode' | grep -v node_modules || true)
+          if [ -n "$TSCONFIGS" ]; then
             echo "❌ tsconfig.json detected - use ReScript instead"
+            echo "$TSCONFIGS"
             exit 1
           fi
-          echo "✅ No tsconfig.json"
+          echo "✅ No tsconfig.json (except legacy extensions/vscode pending conversion)"
 
       - name: Verify Deno presence (if package.json exists)
         run: |
