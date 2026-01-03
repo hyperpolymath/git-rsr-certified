@@ -1,3 +1,6 @@
+image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
+image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
+
 // SPDX-License-Identifier: MIT OR Apache-2.0
 // SPDX-FileCopyrightText: 2024 RSR-Certified Contributors
 
@@ -12,7 +15,6 @@
 *Universal Rhodium Standard Repository Compliance Engine*
 
 image:badges/silver.svg[RSR Certification,link=https://rsr-certified.dev]
-image:https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg[License,link=LICENSE.txt]
 image:https://img.shields.io/badge/rust-1.75+-orange.svg[Rust Version]
 
 [.lead]
