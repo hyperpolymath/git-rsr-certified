@@ -1,11 +1,14 @@
-image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
+image:https://img.shields.io/badge/license-PMPL--1.0-blue.svg[License,link="https://github.com/hyperpolymath/palimpsest-license"]
 image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 
 
-// SPDX-License-Identifier: MIT OR Apache-2.0
+// SPDX-License-Identifier: PMPL-1.0 OR PMPL-1.0
 // SPDX-FileCopyrightText: 2024 RSR-Certified Contributors
 
 = RSR-Certified
+
+
+
 :author: RSR-Certified Contributors
 :version: 0.1.0
 :toc: macro
@@ -204,7 +207,7 @@ strict_mode = false
 
 [checks]
 license.required = true
-license.allowed = ["MIT", "Apache-2.0", "GPL-3.0"]
+license.allowed = ["PMPL-1.0", "PMPL-1.0", "PMPL-1.0"]
 readme.min_length = 100
 
 [ignore]
@@ -491,7 +494,7 @@ See link:SECURITY.md[SECURITY.md] for our security policy and vulnerability repo
 
 == License
 
-Dual-licensed under link:LICENSE-MIT[MIT] or link:LICENSE-APACHE[Apache-2.0] at your option.
+Dual-licensed under link:LICENSE-PMPL-1.0[PMPL-1.0] or link:LICENSE-APACHE[PMPL-1.0] at your option.
 
 ---
 
